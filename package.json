@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
-    "dev": "webpack",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "npm run clean && webpack -p",
     "deploy": ""
   },
@@ -20,6 +20,9 @@
   "homepage": "https://github.com/mba2/webpack_boilerplate#readme",
   "description": "Some build options for Web Development",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.1"
   }
 }
