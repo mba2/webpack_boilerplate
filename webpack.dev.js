@@ -2,6 +2,13 @@ const path = require('path');
 const clean = require('clean-webpack-plugin');
 const HtmlWebpack = require('html-webpack-plugin');
 
+// module.exports = {
+//     parser : "sugarss",
+//     plugins : {
+//         "postcss-cssnext": {}
+//     }
+// };
+
 module.exports = {
     devtool : 'inline-source-map',
     devServer : {
@@ -21,9 +28,10 @@ module.exports = {
         rules : [
             {
                 test : /\.s?css$/,
-                use : [
-                    "style-loader",
-                    "css-loader",
+                use: [
+                    'style-loader',
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    'postcss-loader',
                     "sass-loader"
                 ]
             }
