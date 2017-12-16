@@ -1,3 +1,4 @@
-// import "../styles/module_test.css";
+import './module_test';
 
-console.log('asdsada');
+
+console.log('Index first line of code');

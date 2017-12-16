@@ -1,9 +1,38 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const path = require('path');
+const clean = require('clean-webpack-plugin');
+const HtmlWebpack = require('html-webpack-plugin');
 
-module.exports = merge(common, {
+module.exports = {
     devtool : 'inline-source-map',
     devServer : {
         contentBase : './build'
-    }
-});
+    },
+
+    entry : {
+        app : "./src/scripts/index.js",
+    },
+
+    output : {
+        filename : "[name].js",
+        path: path.resolve(__dirname, "dev")
+    },
+
+    module : {
+        rules : [
+            {
+                test : /\.css$/,
+                use : [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    },
+
+    plugins : [
+        new HtmlWebpack({
+            template : "./src/index.html"
+        })
+        // new clean(['build'])
+    ]
+};
