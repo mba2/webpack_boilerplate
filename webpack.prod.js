@@ -15,6 +15,7 @@ module.exports = merge(common, {
 
 	module : {
 		rules : [
+			// STYLE PROCESS
             {
                 test : /\.s?css$/,
                 use: ExtractTextPlugin.extract({
@@ -26,6 +27,13 @@ module.exports = merge(common, {
 					]
 				})
 			},
+			// IMAGE PROCESS
+			{
+				test : /\.(jpeg|jpe?g|svg|png|gif)$/,
+				use : [
+					'file-loader'
+				]
+			}
 		]
 	},
 
@@ -34,6 +42,8 @@ module.exports = merge(common, {
 		new html({
 			template : './src/index.html'
 		})
-	// new UglifyJSPlugin()
+		// new UglifyJSPlugin({
+			// sourceMap : true
+		// })
 	]
 });

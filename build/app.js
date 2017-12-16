@@ -86,7 +86,7 @@ console.log('Index first line of code');
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_module_test_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_module_test_scss__);
 
 
-
+// import logoImg from "../img/tv.png";
 
 console.log("First Line of module_test.js file");
 
@@ -98,8 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let h2 = document.createElement("h2");
         h2.innerText = "via module_test.js";
 
+    // let logo = new Image();
+    //     logo.src = logoImg;
+
     document.body.appendChild(h1);
     document.body.appendChild(h2);
+    // document.body.appendChild(logo);
 });
 
 

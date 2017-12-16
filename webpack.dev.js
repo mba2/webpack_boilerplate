@@ -21,6 +21,12 @@ module.exports = merge(common, {
                     'postcss-loader',
                     "sass-loader"
                 ]
+            },
+            {
+                test : /\.(jpeg|jpe?g|svg|png|gif)$/,
+                use : [
+                    'file-loader'
+                ]
             }
         ]
     },
