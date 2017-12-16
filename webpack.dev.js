@@ -1,28 +1,15 @@
-const path = require('path');
+const common = require('./webpack.common');
+const merge = require('webpack-merge');
+
 const clean = require('clean-webpack-plugin');
 const HtmlWebpack = require('html-webpack-plugin');
 
-// module.exports = {
-//     parser : "sugarss",
-//     plugins : {
-//         "postcss-cssnext": {}
-//     }
-// };
-
-module.exports = {
+module.exports = merge(common, {
     devtool : 'inline-source-map',
     devServer : {
         contentBase : './build'
     },
 
-    entry : {
-        app : "./src/scripts/index.js",
-    },
-
-    output : {
-        filename : "[name].js",
-        path: path.resolve(__dirname, "dev")
-    },
 
     module : {
         rules : [
@@ -42,6 +29,6 @@ module.exports = {
         new HtmlWebpack({
             template : "./src/index.html"
         })
-        // new clean(['build'])
+        // new clean(['dev'])
     ]
-};
+});
