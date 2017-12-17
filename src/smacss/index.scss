@@ -1,0 +1,17 @@
+@import 
+    "modules/menu/menu",
+    "layout/header";
+
+// VENDOR CSS    
+// @import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+// TEST PURPOSES
+* {
+    box-sizing: border-box;
+}
+
+.bg-test {
+    background-image: url('../img/modern-javascript.jpg');
+}
+        
