@@ -27,27 +27,14 @@ module.exports = merge(common, {
 						"sass-loader",
 					]
 				})
-			},
-			// IMAGE PROCESS
-			{
-				test : /\.(jpeg|jpe?g|svg|png|gif)$/,
-				use : {
-					loader:'file-loader',
-					options : {
-						name : '[name].[ext]',
-						outputPath : 'img/'
-					}
-				}
-			},
-			{
-				test: /\.html$/,
-				use: ['html-loader']
 			}
 		]
 	},
 
 	plugins: [
+		// EXTRACTS CSS FILES
 		new ExtractTextPlugin("styles.css"),
+		// USE A SPECIFIC HTML FILE AS TEMPLATE AND EXPORTS IT INTO THE BUIL FOLDER
 		new html({
 			template : './src/index.html'
 		}),
