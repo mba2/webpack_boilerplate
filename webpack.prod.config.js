@@ -9,7 +9,7 @@ const config = {
     },
     output : {
         filename : "app.js",
-        path : path.resolve(__dirname, 'dist')
+        path : path.resolve(__dirname, 'build')
         // publicPath : ,
     },
 
@@ -29,7 +29,7 @@ const config = {
                     fallback :  'style-loader',
                     use : [
                         { loader: 'css-loader', options: { importLoaders: 1 } },
-                        // 'postcss-loader',
+                        'postcss-loader',
                         "sass-loader"
                     ]
                 })

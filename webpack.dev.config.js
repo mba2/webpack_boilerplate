@@ -8,7 +8,7 @@ const config = {
     },
     output : {
         filename : "app.js",
-        path : path.resolve(__dirname, 'dist')
+        path : path.resolve(__dirname, 'build')
         // publicPath : ,
     },
 
@@ -27,7 +27,7 @@ const config = {
                 use: [
                     'style-loader',
                     { loader: 'css-loader', options: { importLoaders: 1 } },
-                    // 'postcss-loader',
+                    'postcss-loader',
                     "sass-loader"
                 ]
             }
