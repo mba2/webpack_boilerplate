@@ -15,7 +15,7 @@ const config = {
     devtool : 'inline-source-map',
     devServer : {
         compress : true,
-        // hot : true,
+        hot : true,
         // stats : "errors-only",
         // open : true
     },
@@ -49,9 +49,9 @@ const config = {
             template : "./src/index.html",
             // hash : true,
             // minify : { collapseWhitespace : true}
-        })
-        // new webpack.NamedModulesPlugin(),
-        // new webpack.HotModuleReplacementPlugin()
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
 

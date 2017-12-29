@@ -52,7 +52,7 @@ const config = {
     // new Extract({
     //     "filename" : "app.css"
     // })
-    // new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin(),
     // new webpack.HotModuleReplacementPlugin()
   ]
 }

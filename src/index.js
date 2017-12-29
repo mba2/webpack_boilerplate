@@ -1,6 +1,12 @@
-import "./index.scss";
+// HOT MODULE ACCEPTION WHEN LOADERS DON'T DO THAT
+if (module.hot) {
+	module.hot.accept();
+}
 
-import "./blocks/user-area/user-area";
+/** ALL MODULES ARE IMPORTED HERE 
+ * JS AND STYLES!!
+*/ 
+import "./blocks/block_import";
 
 console.log("index first code");
 
