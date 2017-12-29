@@ -1,7 +1,8 @@
 import "./index.scss";
 
-// // import test from "./blocks/firebase/firebase";
 import "./blocks/user-area/user-area";
+
+console.log("index first code");
 
 // // MODEL
 // let model = {

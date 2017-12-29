@@ -28,9 +28,19 @@ const config = {
                     'style-loader',
                     { loader: 'css-loader', options: { importLoaders: 1 } },
                     'postcss-loader',
-                    "sass-loader"
+                    'sass-loader'
                 ]
-            }
+            },
+            {
+                test : /\.js$/,
+                use : ['babel-loader'],
+                exclude : /node_modules/
+            },
+            // IMAGE PROCESS
+
+            // FONT PROCESS
+
+            // HTML PROCESSS
         ]
     },
 

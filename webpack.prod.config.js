@@ -22,34 +22,39 @@ const config = {
     },
 
     module : {
-        rules : [
-            {
-                test : /\.s?css$/,
-                use: Extract.extract({
-                    fallback :  'style-loader',
-                    use : [
-                        { loader: 'css-loader', options: { importLoaders: 1 } },
-                        'postcss-loader',
-                        "sass-loader"
-                    ]
-                })
-            }
-        ]
+      rules : [
+        {
+          test : /\.s?css$/,
+          use: Extract.extract({
+            fallback :  'style-loader',
+            use : [
+              { loader: 'css-loader', options: { importLoaders: 1 } },
+              'postcss-loader',
+              "sass-loader"
+            ]
+          })
+        },
+        {
+          test : /\.js$/,
+          use : ['babel-loader'],
+          exclude : /node_modules/
+        }
+      ]
     },
 
     plugins : [
-        new HTML({
-            template : "./src/index.html",
-            // hash : true,
-            // minify : { collapseWhitespace : true}
-        }),
-        new Extract("app.css")
-        // new Extract({
-        //     "filename" : "app.css"
-        // })
-        // new webpack.NamedModulesPlugin(),
-        // new webpack.HotModuleReplacementPlugin()
-    ]
+      new HTML({
+        template : "./src/index.html",
+          // hash : true,
+          // minify : { collapseWhitespace : true}
+      }),
+      new Extract("app.css")
+    // new Extract({
+    //     "filename" : "app.css"
+    // })
+    // new webpack.NamedModulesPlugin(),
+    // new webpack.HotModuleReplacementPlugin()
+  ]
 }
 
 module.exports = config;
