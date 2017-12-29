@@ -1,7 +1,7 @@
-// // require("./index.html");
+import "./index.scss";
 
 // // import test from "./blocks/firebase/firebase";
-// // import "./blocks/user-area/user-area";
+import "./blocks/user-area/user-area";
 
 // // MODEL
 // let model = {

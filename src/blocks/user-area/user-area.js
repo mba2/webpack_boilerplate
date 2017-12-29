@@ -1,3 +1,3 @@
 import "./_user-area.scss";
-
-console.log("user-area");
+import "./index.css";
+console.log("user-area!!!");

@@ -12,11 +12,27 @@ const config = {
         // publicPath : ,
     },
 
-    // modules : {
-    //     rules : [
+    devtool : 'inline-source-map',
+    devServer : {
+        compress : true,
+        // hot : true,
+        // stats : "errors-only",
+        // open : true
+    },
 
-    //     ]
-    // },
+    module : {
+        rules : [
+            {
+                test : /\.s?css$/,
+                use: [
+                    'style-loader',
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    // 'postcss-loader',
+                    "sass-loader"
+                ]
+            }
+        ]
+    },
 
     plugins : [
         new HTML({
@@ -24,6 +40,8 @@ const config = {
             // hash : true,
             // minify : { collapseWhitespace : true}
         })
+        // new webpack.NamedModulesPlugin(),
+        // new webpack.HotModuleReplacementPlugin()
     ]
 }
 
