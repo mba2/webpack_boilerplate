@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HTML = require("html-webpack-plugin");
 const Extract = require("extract-text-webpack-plugin");
+const Clean = require('clean-webpack-plugin');
 
 const config = {
     entry : {
@@ -57,7 +58,8 @@ const config = {
           // hash : true,
         minify : { collapseWhitespace : true}
       }),
-      new Extract("app.css")
+      new Extract("app.css"),
+      new Clean(["build"])
   ]
 }
 
