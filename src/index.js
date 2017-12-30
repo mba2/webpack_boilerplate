@@ -6,7 +6,8 @@ if (module.hot) {
 /** ALL MODULES ARE IMPORTED HERE 
  * JS AND STYLES!!
 */ 
-import "./blocks/block_import";
+import "./blocks/index.scss";
+import "./blocks/user-area/user-area";
 
 console.log("index first code");
 

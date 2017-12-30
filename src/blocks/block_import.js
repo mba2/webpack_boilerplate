@@ -1,3 +1,7 @@
-import "./user-area/user-area";
-import "./loader/loader";
-import "./base/base";
+// GENERIC OR GLOBAL ELEMENTS
+// import "./base/base";
+// // import "./fonts/fonts";
+
+// // BLOCKS
+// import "./user-area/user-area";
+// import "./loader/loader";

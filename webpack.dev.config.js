@@ -8,8 +8,8 @@ const config = {
     },
     output : {
         filename : "app.js",
-        path : path.resolve(__dirname, 'build')
-        // publicPath : ,
+        path : path.resolve(__dirname, 'build'),
+        publicPath : '/'
     },
 
     devtool : 'inline-source-map',
@@ -36,11 +36,27 @@ const config = {
                 use : ['babel-loader'],
                 exclude : /node_modules/
             },
+            //FONT PROCESS
+            {
+                test : /\.(woff|woff2|svg|eot)$/,
+                use : 'file-loader'
+            },
             // IMAGE PROCESS
-
-            // FONT PROCESS
-
-            // HTML PROCESSS
+            {
+				test : /\.(jpeg|jpe?g|svg|png|gif)$/,
+				use : [
+					{
+						loader:'url-loader',
+						options : { limit : 40000 }
+					},
+					'image-webpack-loader'
+				]
+            },
+            // HTML PROCESS
+			{
+				test: /\.html$/,
+				use: ['html-loader']
+            }
         ]
     },
 

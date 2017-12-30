@@ -8,9 +8,8 @@ const config = {
         app : "./src/index.js"
     },
     output : {
-        filename : "app.js",
+        filename : "[name].js",
         path : path.resolve(__dirname, 'build')
-        // publicPath : ,
     },
 
     devtool : 'inline-source-map',
@@ -38,7 +37,17 @@ const config = {
           test : /\.js$/,
           use : ['babel-loader'],
           exclude : /node_modules/
-        }
+        },
+        // IMAGE PROCESS
+
+        // FONT PROCESS
+          {
+              test: /\.(woff|woff2|eot|ttf|otf)$/,
+              use: [
+                  'file-loader'
+              ]
+          }
+          // HTML PROCESSS
       ]
     },
 
@@ -46,14 +55,9 @@ const config = {
       new HTML({
         template : "./src/index.html",
           // hash : true,
-          // minify : { collapseWhitespace : true}
+        minify : { collapseWhitespace : true}
       }),
       new Extract("app.css")
-    // new Extract({
-    //     "filename" : "app.css"
-    // })
-    new webpack.NamedModulesPlugin(),
-    // new webpack.HotModuleReplacementPlugin()
   ]
 }
 
