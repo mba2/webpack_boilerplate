@@ -23,6 +23,7 @@ const config = {
 
     module : {
       rules : [
+        //STYLES PROCESS
         {
           test : /\.s?css$/,
           use: Extract.extract({
@@ -34,28 +35,42 @@ const config = {
             ]
           })
         },
+         //JAVASCRIPT PROCESS
         {
           test : /\.js$/,
           use : ['babel-loader'],
           exclude : /node_modules/
         },
         // IMAGE PROCESS
-
+        {
+          test : /\.(jpeg|jpe?g|svg|png|gif)$/,
+          use : [
+            {
+              loader:'url-loader',
+              options : { limit : 40000 }
+            },
+            'image-webpack-loader'
+          ]
+        },
         // FONT PROCESS
-          {
-              test: /\.(woff|woff2|eot|ttf|otf)$/,
-              use: [
-                  'file-loader'
-              ]
-          }
-          // HTML PROCESSS
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+              'file-loader'
+          ]
+        },
+        // HTML PROCESS
+			  {
+				  test: /\.html$/,
+				  use: ['html-loader']
+        }
       ]
     },
 
     plugins : [
       new HTML({
         template : "./src/index.html",
-          // hash : true,
+        hash : true,
         minify : { collapseWhitespace : true}
       }),
       new Extract("app.css"),

@@ -22,6 +22,7 @@ const config = {
 
     module : {
         rules : [
+            //STYLES PROCESS
             {
                 test : /\.s?css$/,
                 use: [
@@ -31,6 +32,7 @@ const config = {
                     'sass-loader'
                 ]
             },
+            //JAVASCRIPT PROCESS
             {
                 test : /\.js$/,
                 use : ['babel-loader'],
