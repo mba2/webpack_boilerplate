@@ -1,21 +1,25 @@
+const VENDOR = require('./src/vendor/vendor-libs');
+
 const webpack = require("webpack");
 const path = require("path");
 const HTML = require("html-webpack-plugin");
 
+
 const config = {
     entry : {
-        app : "./src/index.js"
+        app : './src/index.js',
+        'vendor' :  VENDOR.js_libs
     },
     output : {
-        filename : "app.js",
+        filename : "[name].js",
         path : path.resolve(__dirname, 'build'),
         publicPath : '/'
     },
 
     devtool : 'inline-source-map',
     devServer : {
-        compress : true,
-        hot : true,
+        // compress : true,
+        // hot : true,
         // stats : "errors-only",
         // open : true
     },
@@ -63,13 +67,25 @@ const config = {
     },
 
     plugins : [
+        /** SET ACCESS TO jQuery */
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
+        /** GENERATES HTML FILES */
         new HTML({
             template : "./src/index.html",
-            // hash : true,
-            // minify : { collapseWhitespace : true}
         }),
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        /**  THIS PLUGIN JOIN PLUGINS THAT ARE USED IN MORE THAN ONE MODULE */
+        new webpack.optimize.CommonsChunkPlugin({
+            name : 'vendor'
+        })        
+        /**
+         *  UNCOMMENT THIS TWO PLUGINS + ADD {} INTO 'hot : true,' INTO devServer PROPERTY
+         *  TO WORK WITH HOT MODULE REPLACEMENT
+        */ 
+        // new webpack.NamedModulesPlugin(),
+        // new webpack.HotModuleReplacementPlugin()
     ]
 }
 

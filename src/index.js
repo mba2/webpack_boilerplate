@@ -3,9 +3,11 @@ if (module.hot) {
 	module.hot.accept();
 }
 
+
 /** ALL MODULES ARE IMPORTED HERE 
  * JS AND STYLES!!
 */ 
+
 // import "./fonts/fonts.css";
 
 import "./blocks/user-area/user-area";
