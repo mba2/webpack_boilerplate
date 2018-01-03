@@ -67,6 +67,10 @@ const config = {
     },
 
     plugins : [
+        /** SET THIS ENVIRONMENT AS A TYPE OF `DEVELOPMENT` SO THIRD PARTY LIBRARIES ACT ACCORDINGLY */
+        new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify('development')
+        }),
         /** SET ACCESS TO jQuery */
         new webpack.ProvidePlugin({
             $: 'jquery',

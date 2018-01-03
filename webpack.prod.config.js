@@ -70,6 +70,10 @@ const config = {
     },
 
     plugins : [
+      /** SET THIS ENVIRONMENT AS A TYPE OF `PRODUCTION` SO THIRD PARTY LIBRARIES ACT ACCORDINGLY */
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
       /** SET ACCESS TO jQuery */
       new webpack.ProvidePlugin({
         $: 'jquery',
