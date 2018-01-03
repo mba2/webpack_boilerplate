@@ -78,11 +78,11 @@ const config = {
       /** GENERATES HTML FILES */
       new HTML({
         template : "./src/index.html",
-        minify : { collapseWhitespace : true}
+        minify : { collapseWhitespace : true }
       }),
       /**  THIS PLUGIN JOIN PLUGINS THAT ARE USED IN MORE THAN ONE MODULE */
       new webpack.optimize.CommonsChunkPlugin({
-        name : `vendor`
+        names : ['vendor','manifest']
       }),
       /**  EXTRACT THE FINAL STYLESHEET */
       new Extract("app.[hash].css"),

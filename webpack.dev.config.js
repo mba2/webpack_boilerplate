@@ -78,7 +78,7 @@ const config = {
         }),
         /**  THIS PLUGIN JOIN PLUGINS THAT ARE USED IN MORE THAN ONE MODULE */
         new webpack.optimize.CommonsChunkPlugin({
-            name : 'vendor'
+            names : ['vendor','manifest']
         })        
         /**
          *  UNCOMMENT THIS TWO PLUGINS + ADD {} INTO 'hot : true,' INTO devServer PROPERTY

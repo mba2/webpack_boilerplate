@@ -16,5 +16,5 @@ import "./blocks/global/global";
 
 window.addEventListener('DOMContentLoaded', () => {
     // controller.init();
-    console.log("I'm the one who knocks!");
+    console.log("I'm the one who knocks!!!!");
 });
