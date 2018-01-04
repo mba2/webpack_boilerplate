@@ -1,3 +1,5 @@
+const VENDOR = require('./src/vendor/vendor-libs');
+
 const webpack = require("webpack");
 const path = require("path");
 const HTML = require("html-webpack-plugin");
@@ -8,14 +10,14 @@ const Uglify = require('uglifyjs-webpack-plugin');
 const config = {
     entry : {
         app : "./src/index.js",
-        vendor :  ['jquery']
+        vendor : VENDOR.js_libs
     },
     output : {
         filename : "[name].[chunkhash].js",
         path : path.resolve(__dirname, 'build')
     },
 
-    devtool : 'source-map',
+    // devtool : 'source-map',
     devServer : {
         compress : true,
         // hot : true,

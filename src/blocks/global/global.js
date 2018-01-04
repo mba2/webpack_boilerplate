@@ -2,4 +2,11 @@ import "./global.scss";
 
 $("body").addClass("test");
 
-console.log("gloabl");
+// console.log("global Scripts");
+// console.log(process.env.NODE_ENV);
+
+
+
+
+
+

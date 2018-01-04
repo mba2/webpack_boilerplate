@@ -1,9 +1,5 @@
 import "./user-area.scss";
 
-console.log("user area hot");
+console.log("I`m outside!");
 
-let test = (arg1 = 'sssss',...arg2) => {
-    console.log(arg1);
-};
-
-test();
+export default () => console.log("user area script");
