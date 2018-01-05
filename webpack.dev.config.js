@@ -14,10 +14,11 @@ const config = merge(commom, {
     },
 
     devtool : 'inline-source-map',
+
     devServer : {
         // compress : true,
         // hot : true,
-        // stats : "errors-only",
+        stats : "errors-only",
         // open : true
     },
 

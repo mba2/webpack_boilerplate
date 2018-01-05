@@ -15,13 +15,7 @@ const config = merge(common,{
         path : path.resolve(__dirname, 'build')
     },
 
-    // devtool : 'source-map',
-    devServer : {
-        compress : true,
-        // hot : true,
-        // stats : "errors-only",
-        // open : true
-    },
+    devtool : 'source-map',
 
     module : {
       rules : [
@@ -36,12 +30,6 @@ const config = merge(common,{
               "sass-loader"
             ]
           })
-        },
-         //JAVASCRIPT PROCESS
-        {
-          test : /\.js$/,
-          use : ['babel-loader'],
-          exclude : /node_modules/
         },
         // IMAGE PROCESS
         {
