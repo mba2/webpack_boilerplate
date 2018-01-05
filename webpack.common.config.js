@@ -2,7 +2,7 @@
 const VENDOR = require('./src/vendor/vendor-libs');
 
 const path = require('path');
-
+const webpack = require('webpack');
 
 module.exports = {
 	entry : {
@@ -41,5 +41,12 @@ module.exports = {
 				use: ['html-loader']
 			}
 		]
-	}
+	},
+	plugins : [
+		/** SET ACCESS TO jQuery */
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
+		})
+	]
 };
