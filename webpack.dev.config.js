@@ -22,47 +22,20 @@ const config = merge(commom, {
         // open : true
     },
 
-    module : {
-        rules : [
-            //STYLES PROCESS
-            {
-                test : /\.s?css$/,
-                use: [
-                    'style-loader',
-                    { loader: 'css-loader', options: { importLoaders: 1 } },
-                    'postcss-loader',
-                    'sass-loader'
-                ]
-            },
-            //JAVASCRIPT PROCESS
-            {
-                test : /\.js$/,
-                use : ['babel-loader'],
-                exclude : /node_modules/
-            },
-            //FONT PROCESS
-            {
-                test : /\.(woff|woff2|svg|eot)$/,
-                use : 'file-loader'
-            },
-            // IMAGE PROCESS
-            {
-				test : /\.(jpeg|jpe?g|svg|png|gif)$/,
-				use : [
-					{
-						loader:'url-loader',
-						options : { limit : 40000 }
-					},
-					'image-webpack-loader'
-				]
-            },
-            // HTML PROCESS
+	module : {
+		rules : [
+			//STYLE PROCESS
 			{
-				test: /\.html$/,
-				use: ['html-loader']
-            }
-        ]
-    },
+				test : /\.s?css$/,
+				use: [
+					'style-loader',
+					{ loader: 'css-loader', options: { importLoaders: 1 } },
+					'postcss-loader',
+					'sass-loader'
+				]
+			}
+		]
+	},
 
     plugins : [
         /** SET THIS ENVIRONMENT AS A TYPE OF `DEVELOPMENT` SO THIRD PARTY LIBRARIES ACT ACCORDINGLY */
