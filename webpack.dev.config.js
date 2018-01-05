@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const commom = require('./webpack.common.config');
 const path = require('path');
-const HTML = require('html-webpack-plugin');
 
 
 const config = merge(commom, {
@@ -18,7 +17,7 @@ const config = merge(commom, {
 	devServer : {
 		// compress : true,
 		// hot : true,
-		stats : "errors-only",
+		// stats : "errors-only",
 		// open : true
 	},
 
@@ -42,19 +41,15 @@ const config = merge(commom, {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('development')
 		}),
-		/** GENERATES HTML FILES */
-		new HTML({
-				template : "./src/index.html",
-		}),
 		/**  THIS PLUGIN JOIN PLUGINS THAT ARE USED IN MORE THAN ONE MODULE */
 		new webpack.optimize.CommonsChunkPlugin({
-				names : ['vendor']
-		})        
+			names : ['vendor']
+		}),      
 		/**
 		 *  UNCOMMENT THIS TWO PLUGINS + ADD {} INTO 'hot : true,' INTO devServer PROPERTY
 		 *  TO WORK WITH HOT MODULE REPLACEMENT
 		*/ 
-		// new webpack.NamedModulesPlugin(),
+		new webpack.NamedModulesPlugin(),
 		// new webpack.HotModuleReplacementPlugin()
 	]
 });

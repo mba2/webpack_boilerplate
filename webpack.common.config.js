@@ -3,10 +3,12 @@ const VENDOR = require('./src/vendor/vendor-libs');
 
 const path = require('path');
 const webpack = require('webpack');
+const HTML = require('html-webpack-plugin');
 
 module.exports = {
 	entry : {
 		app : "./src/index.js",
+		resume : "./src/resume.js",
 		vendor : VENDOR.js_libs
 	},
 	module : {
@@ -47,6 +49,12 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
+		}),
+		/** GENERATES HTML FILES */
+		new HTML({
+			template : "./src/index.html",
+			minify : { collapseWhitespace : true },
+			excludeChunks: ['resume']
 		})
 	]
 };

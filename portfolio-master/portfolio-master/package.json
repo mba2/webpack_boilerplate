@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-assets-versioning": "^1.0.6",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-injector": "^1.1.0",
+    "grunt-sass-import": "^0.2.2",
+    "grunt-spritesmith": "^6.4.0"
+  }
+}

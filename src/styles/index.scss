@@ -1,0 +1,14 @@
+// TEST PURPOSES
+.img-test {
+    width: 200px;
+    height: 200px;
+}
+
+@import 
+    "base/base-import",
+    "modules/modules-import",
+    "layout/layout-import";
+
+// IMPORT VENDOR STYLES
+// @import '~bootstrap/dist/css/bootstrap.min.css'; 
+
