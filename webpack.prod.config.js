@@ -1,17 +1,18 @@
 const VENDOR = require('./src/vendor/vendor-libs');
 
-const webpack = require("webpack");
-const path = require("path");
-const HTML = require("html-webpack-plugin");
-const Extract = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
+const merge = require('merge');
+const path = require('path');
+const HTML = require('html-webpack-plugin');
+const Extract = require('extract-text-webpack-plugin');
 const Clean = require('clean-webpack-plugin');
 const Uglify = require('uglifyjs-webpack-plugin');
 
 const config = {
-    entry : {
-        app : "./src/index.js",
-        vendor : VENDOR.js_libs
-    },
+    // entry : {
+    //     app : "./src/index.js",
+    //     vendor : VENDOR.js_libs
+    // },
     output : {
         filename : "[name].[chunkhash].js",
         path : path.resolve(__dirname, 'build')

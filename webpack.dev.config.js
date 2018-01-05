@@ -1,15 +1,11 @@
-const VENDOR = require('./src/vendor/vendor-libs');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const commom = require('./webpack.common.config');
+const path = require('path');
+const HTML = require('html-webpack-plugin');
 
-const webpack = require("webpack");
-const path = require("path");
-const HTML = require("html-webpack-plugin");
 
-
-const config = {
-    entry : {
-        app : './src/index.js',
-        'vendor' :  VENDOR.js_libs
-    },
+const config = merge(commom, {
     output : {
         filename : "[name].js",
         chunkFilename: '[name].chunk.js',
@@ -92,6 +88,6 @@ const config = {
         // new webpack.NamedModulesPlugin(),
         // new webpack.HotModuleReplacementPlugin()
     ]
-}
+});
 
 module.exports = config;
