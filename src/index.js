@@ -4,6 +4,8 @@ if (module.hot) {
 }
 
 
+import "./resume";
+
 /** ALL MODULES ARE IMPORTED HERE 
  * JS AND STYLES!!
 */ 

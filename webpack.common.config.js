@@ -52,9 +52,15 @@ module.exports = {
 		}),
 		/** GENERATES HTML FILES */
 		new HTML({
+			filename : 'index.html',
 			template : "./src/index.html",
 			minify : { collapseWhitespace : true },
 			excludeChunks: ['resume']
+		}),
+		new HTML({
+			filename : 'resume.html',
+			template : "./src/resume.html",
+			// chunks : ['app','vendor'] /** This is just an example in case you want to custom the js files that this HTML will load*/
 		})
 	]
 };
