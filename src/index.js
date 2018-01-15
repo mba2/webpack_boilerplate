@@ -4,14 +4,13 @@ if (module.hot) {
 }
 
 
-import "./resume";
-
 /** ALL MODULES ARE IMPORTED HERE 
  * JS AND STYLES!!
 */ 
+import "./styles/index.scss";
 
-import "./blocks/global/global";
-import "./blocks/header/header";
+import "./components/header";
+import "./components/logo";
 
 window.addEventListener('DOMContentLoaded', () => {
     // controller.init();

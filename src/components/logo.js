@@ -1,6 +1,6 @@
 // MODULE IMPORTED IMAGES
 
-import logoImg from "../../img/italian_brothers.jpg";
+import logoImg from "../img/italian_brothers.jpg";
 
 // export default () => {
 //     console.log("This log is inside the logo.js file");
